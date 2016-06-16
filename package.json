@@ -1,7 +1,7 @@
 {
-  "name": "simple-server-with-osm",
+  "name": "Bus-stops schedule",
   "version": "0.0.1",
-  "description": "server with osm",
+  "description": "bus",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vanish404/OSM.git"
+    "url": "https://github.com/pub-t/bus-schedule"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vanish404/OSM/issues"
+    "url": "https://github.com/pub-t/bus-schedule/issues"
   },
-  "homepage": "https://github.com/Vanish404/OSM#readme",
+  "homepage": "https://github.com/pub-t/bus-schedule#readme",
   "dependencies": {
     "node-static": "^0.7.7"
   }
