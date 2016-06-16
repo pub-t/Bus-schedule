@@ -1,0 +1,3 @@
+/* Reset margin (defaults to 8px), so map uses all visible space. */
+body { margin: 0 }
+#bus-stops-map { height: 100%; }
