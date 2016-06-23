@@ -1,15 +1,15 @@
-var express = require('express');
-var http = require('http');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express');
+const http = require('http');
+const app = express();
+const bodyParser = require('body-parser');
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.post('/Search', urlencodedParser, function (req, res) {
-    res.sendFile(__dirname + "/" + 'example.json');
+app.post('/Search', urlencodedParser, (req, res) => {
+  res.sendFile( __dirname + '/' + 'example.json');
 });
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 server.listen(7788);
 
