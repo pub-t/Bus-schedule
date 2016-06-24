@@ -22,57 +22,26 @@ L.control.scale().addTo(map);
 // with scale contol on small screens.
 L.control.attribution({ prefix: '' }).addTo(map);
 
+
 var layerGroupGeolocation = new L.layerGroup();
 var busStopArray = [];
 var clusters = [];
+var busIcon = L.icon({
+    iconUrl: 'bus.png',
+    iconSize: [35,35]
+});
 
-function getMyLocation() {
-
-    map.locate({setView: true, maxZoom: 16});
-
-    function onLocationFound(e) {
-
-        var radius = e.accuracy / 2;
-        var marker = L.marker(e.latlng)
-            .bindPopup("You are within " + radius + " meters from this point");
-
-        var circle = L.circle(e.latlng, radius);
-
-        clearGeolocationPosition();
-        layerGroupGeolocation.addLayer(marker).addTo(map);
-        layerGroupGeolocation.addLayer(circle).addTo(map);
-
-        geolocationFlag = true;
-    }
-
-    //found lcation
-    map.on('locationfound', onLocationFound);
-
-    //don't find location
-    function onLocationError(e) {
-        alert(e.message);
-    }
-
-    map.on('locationerror', onLocationError);
-
-}
-
-function clearGeolocationPosition() {
-    layerGroupGeolocation.clearLayers();
-}
 
 function getAllBusStop() {
 
     $.getJSON("bus-stop.json", function (json) {
         busStopArray = json;
 
-    });
-
     var myCluster = L.geoJson(busStopArray,{
         pointToLayer: function(feature,latlng){
             var popup = feature.properties['name:ru'];
-            var marker = L.marker(latlng);
-            marker.bindPopup('Bus-stop name: '+popup);
+            var marker = L.marker(latlng,{icon: busIcon});
+            marker.bindPopup('Bus-stop name: '+ popup);
             return marker;
         }
     });
@@ -80,10 +49,8 @@ function getAllBusStop() {
     clusters = L.markerClusterGroup();
     clusters.addLayer(myCluster);
     map.addLayer(clusters);
-
+    });
 }
 
 
-function clearAllBusStop() {
-    clusters.clearLayers();
-}
+
