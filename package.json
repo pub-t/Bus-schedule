@@ -1,7 +1,7 @@
 {
-  "name": "Bus-stops schedule",
+  "name": "Bus-schedule",
   "version": "0.0.1",
-  "description": "bus",
+  "description": "View the schedule of the selected bus stop",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
