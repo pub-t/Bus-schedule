@@ -22,7 +22,6 @@ L.control.scale().addTo(map);
 // with scale contol on small screens.
 L.control.attribution({ prefix: '' }).addTo(map);
 
-
 var layerGroupGeolocation = new L.layerGroup();
 var busStopArray = [];
 var clusters = [];
@@ -30,7 +29,6 @@ var busIcon = L.icon({
     iconUrl: 'bus.png',
     iconSize: [35,35]
 });
-
 
 function getAllBusStop() {
 
@@ -51,6 +49,3 @@ function getAllBusStop() {
     map.addLayer(clusters);
     });
 }
-
-
-
