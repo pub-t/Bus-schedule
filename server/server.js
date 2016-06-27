@@ -1,9 +1,9 @@
-var http = require('http');
-var static = require('node-static');
-var file = new static.Server('.');
+const http = require('http');
+const static = require('node-static');
+const file = new static.Server('.');
 
 http.createServer(function(req, res) {
-    file.server(req, res);
+    file.serve(req, res);
 }).listen(8080);
 
 console.log('Server running on port 8080');
