@@ -22,7 +22,7 @@ L.control.scale().addTo(map);
 // with scale contol on small screens.
 L.control.attribution({ prefix: '' }).addTo(map);
 
-const layerGroupGeolocation = new L.layerGroup();
+
 let busStopArray = [];
 let clusters = [];
 const busIcon = L.icon({
@@ -31,20 +31,31 @@ const busIcon = L.icon({
 });
 
 function getAllBusStop() {
-  $.getJSON('bus-stop.json', function (json) {
+  $.getJSON('bus-stop.json', (json) => {
     busStopArray = json;
 
     const myCluster = L.geoJson(busStopArray, {
       pointToLayer(feature, latlng) {
         const popup = feature.properties['name:ru'];
         const marker = L.marker(latlng, { icon: busIcon });
-        marker.bindPopup('Bus-stop name: ' + popup);
+        marker.bindPopup(popup);
         return marker;
       },
     });
-
+    function markerOnClick(e) {
+      document.getElementById('bus-stops').style.display = 'block';
+      document.getElementById('bus-stops-map').style.display = 'none';
+      document.getElementById('back-map').style.display = 'block';
+    }
     clusters = L.markerClusterGroup();
+    clusters.on('click', markerOnClick);
     clusters.addLayer(myCluster);
     map.addLayer(clusters);
   });
+}
+
+function buttonOnClick() {
+  document.getElementById('bus-stop').style.display = 'none';
+  document.getElementById('bus-stops-map').style.display = 'block';
+  document.getElementById('back-map').style.display = 'none';
 }
