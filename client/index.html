@@ -1,5 +1,5 @@
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no", charset=utf-8>
 
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
@@ -16,11 +16,41 @@
 <body>
 
 <div id="bus-stops-map"></div>
+<div id="back-map"><button onclick="buttonOnClick()">Смотреть карту</button></div>
+<div id="bus-stop">
 
-<script src="app.js"></script>
-<script type="text/javascript">
+  Расписание автобусa №2 в Гродно
+  <br>
+  Название остановки: ул. Победы
+  <br>
+  Направление: Улица Победы - Девятовка-5
+  <table class="hours_set" style="display: table;"><tbody><tr ><td ></td><td class="hour">5</td><td class="hour">6</td><td class="hour">7</td><td class="hour">8</td><td class="hour">9</td><td class="hour">10</td><td class="hour">11</td><td class="hour">12</td><td class="hour">13</td><td class="hour">14</td><td class="hour">15</td><td class="hour">16</td><td class="hour">17</td><td class="hour">18</td><td class="hour">19</td><td class="hour">20</td><td class="hour">21</td><td class="hour">22</td><td class="hour">23</td><td class="hour">0</td><td class="hour">1</td></tr><tr class=" weekdays "><td>буд.</td><td>14</td><td>00 14 35 47 55</td><td>10 21 42</td><td>02 11 27 42</td><td>07 16 27</td><td>12</td><td>09</td><td>01 26 51</td><td>21 46</td><td>45 56</td><td>14 26 50</td><td>15 26 34 49</td><td>15 40 55</td><td>10 38</td><td></td><td>21</td><td>21 46</td><td>41</td><td>51</td><td></td><td></td></tr><tr class=" weekends "><td>вых.</td><td>06 28 53</td><td>16 26 51</td><td>16 36 46</td><td>11 36 56</td><td>16</td><td></td><td>01 28</td><td>21</td><td>06 51</td><td>26</td><td>23</td><td>06 44</td><td>26</td><td>16</td><td>01 36</td><td></td><td>11 51</td><td>51</td><td></td><td></td><td></td></tr></tbody></table>
+  <br>
+  Расписание автобусa №5 в Гродно
+  <br>
+  Название остановки: ул. Победы
+  <br>
+  Направление: Улица Победы - Девятовка-5
+  <table class="hours_set" style="display: table;"><tbody><tr ><td ></td><td class="hour">5</td><td class="hour">6</td><td class="hour">7</td><td class="hour">8</td><td class="hour">9</td><td class="hour">10</td><td class="hour">11</td><td class="hour">12</td><td class="hour">13</td><td class="hour">14</td><td class="hour">15</td><td class="hour">16</td><td class="hour">17</td><td class="hour">18</td><td class="hour">19</td><td class="hour">20</td><td class="hour">21</td><td class="hour">22</td><td class="hour">23</td><td class="hour">0</td><td class="hour">1</td></tr><tr class=" weekdays "><td>буд.</td><td>14</td><td>00 14 35 47 55</td><td>10 21 42</td><td>02 11 27 42</td><td>07 16 27</td><td>12</td><td>09</td><td>01 26 51</td><td>21 46</td><td>45 56</td><td>14 26 50</td><td>15 26 34 49</td><td>15 40 55</td><td>10 38</td><td></td><td>21</td><td>21 46</td><td>41</td><td>51</td><td></td><td></td></tr><tr class=" weekends "><td>вых.</td><td>06 28 53</td><td>16 26 51</td><td>16 36 46</td><td>11 36 56</td><td>16</td><td></td><td>01 28</td><td>21</td><td>06 51</td><td>26</td><td>23</td><td>06 44</td><td>26</td><td>16</td><td>01 36</td><td></td><td>11 51</td><td>51</td><td></td><td></td><td></td></tr></tbody></table>
+  <br>
+  Расписание автобусa №20 в Гродно
+  <br>
+  Название остановки: ул. Победы
+  <br>
+  Направление: Улица Победы - Девятовка-5
+  <table class="hours_set" style="display: table;"><tbody><tr ><td ></td><td class="hour">5</td><td class="hour">6</td><td class="hour">7</td><td class="hour">8</td><td class="hour">9</td><td class="hour">10</td><td class="hour">11</td><td class="hour">12</td><td class="hour">13</td><td class="hour">14</td><td class="hour">15</td><td class="hour">16</td><td class="hour">17</td><td class="hour">18</td><td class="hour">19</td><td class="hour">20</td><td class="hour">21</td><td class="hour">22</td><td class="hour">23</td><td class="hour">0</td><td class="hour">1</td></tr><tr class=" weekdays "><td>буд.</td><td>14</td><td>00 14 35 47 55</td><td>10 21 42</td><td>02 11 27 42</td><td>07 16 27</td><td>12</td><td>09</td><td>01 26 51</td><td>21 46</td><td>45 56</td><td>14 26 50</td><td>15 26 34 49</td><td>15 40 55</td><td>10 38</td><td></td><td>21</td><td>21 46</td><td>41</td><td>51</td><td></td><td></td></tr><tr class=" weekends "><td>вых.</td><td>06 28 53</td><td>16 26 51</td><td>16 36 46</td><td>11 36 56</td><td>16</td><td></td><td>01 28</td><td>21</td><td>06 51</td><td>26</td><td>23</td><td>06 44</td><td>26</td><td>16</td><td>01 36</td><td></td><td>11 51</td><td>51</td><td></td><td></td><td></td></tr></tbody></table>
+  <br>
+  Расписание автобусa №16 в Гродно
+  <br>
+  Название остановки: ул. Победы
+  <br>
+  Направление: Улица Победы - Девятовка-5
+  <table class="hours_set" style="display: table;"><tbody><tr ><td ></td><td class="hour">5</td><td class="hour">6</td><td class="hour">7</td><td class="hour">8</td><td class="hour">9</td><td class="hour">10</td><td class="hour">11</td><td class="hour">12</td><td class="hour">13</td><td class="hour">14</td><td class="hour">15</td><td class="hour">16</td><td class="hour">17</td><td class="hour">18</td><td class="hour">19</td><td class="hour">20</td><td class="hour">21</td><td class="hour">22</td><td class="hour">23</td><td class="hour">0</td><td class="hour">1</td></tr><tr class=" weekdays "><td>буд.</td><td>14</td><td>00 14 35 47 55</td><td>10 21 42</td><td>02 11 27 42</td><td>07 16 27</td><td>12</td><td>09</td><td>01 26 51</td><td>21 46</td><td>45 56</td><td>14 26 50</td><td>15 26 34 49</td><td>15 40 55</td><td>10 38</td><td></td><td>21</td><td>21 46</td><td>41</td><td>51</td><td></td><td></td></tr><tr class=" weekends "><td>вых.</td><td>06 28 53</td><td>16 26 51</td><td>16 36 46</td><td>11 36 56</td><td>16</td><td></td><td>01 28</td><td>21</td><td>06 51</td><td>26</td><td>23</td><td>06 44</td><td>26</td><td>16</td><td>01 36</td><td></td><td>11 51</td><td>51</td><td></td><td></td><td></td></tr></tbody></table>
+
+  <script src="app.js"></script>
+  <script type="text/javascript">
   getAllBusStop();
 </script>
-
+</div>
 </body>
 </html>
