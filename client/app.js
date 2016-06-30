@@ -55,7 +55,7 @@ function getAllBusStop() {
 }
 
 function buttonOnClick() {
-  document.getElementById('bus-stop').style.display = 'none';
+  document.getElementById('bus-stops').style.display = 'none';
   document.getElementById('bus-stops-map').style.display = 'block';
   document.getElementById('back-map').style.display = 'none';
 }
