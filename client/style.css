@@ -1,3 +1,17 @@
 /* Reset margin (defaults to 8px), so map uses all visible space. */
 body { margin: 0 }
-#bus-stops-map { height: 100%; }
+
+#bus-stops-map { height: 100%; display:block; }
+
+#bus-stops { height: 100%; display:none; }
+
+#back-map { display:none; text-align: center; }
+
+TABLE {
+    width: 100%; /* Ширина таблицы */
+    border: 1px solid black; /* Рамка вокруг таблицы */
+}
+td {
+    border: 1px solid black; /* Граница вокруг ячеек */
+}
+
