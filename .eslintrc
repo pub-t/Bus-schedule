@@ -1,3 +1,13 @@
 {
-  "extends": "airbnb"
+  "extends": "airbnb",
+  "env": {
+    "jquery" : true
+  },
+  "globals": {
+    "L" : true
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "prefer-template": "off"
+  }
 }
