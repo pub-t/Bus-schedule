@@ -36,25 +36,24 @@ function getAllBusStop() {
 
     const myCluster = L.geoJson(busStopArray, {
       pointToLayer(feature, latlng) {
-        const popup = feature.properties['name:ru'];
+        const popup = feature.properties['name'];
         const marker = L.marker(latlng, { icon: busIcon });
-        marker.bindPopup(popup);
+        marker.bindPopup(popup + '<br><button onclick=schOnClick()>Смотреть расписание</button>');
         return marker;
       },
     });
-    function markerOnClick(e) {
-      document.getElementById('bus-stops').style.display = 'block';
-      document.getElementById('bus-stops-map').style.display = 'none';
-      document.getElementById('back-map').style.display = 'block';
-    }
+
     clusters = L.markerClusterGroup();
-    clusters.on('dblclick', markerOnClick);
     clusters.addLayer(myCluster);
     map.addLayer(clusters);
   });
 }
-
-function buttonOnClick() {
+function schOnClick() {
+  document.getElementById('bus-stops').style.display = 'block';
+  document.getElementById('bus-stops-map').style.display = 'none';
+  document.getElementById('back-map').style.display = 'block';
+}
+function backmapOnClick() {
   document.getElementById('bus-stops').style.display = 'none';
   document.getElementById('bus-stops-map').style.display = 'block';
   document.getElementById('back-map').style.display = 'none';
