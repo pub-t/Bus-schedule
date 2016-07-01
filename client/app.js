@@ -48,7 +48,7 @@ function getAllBusStop() {
       document.getElementById('back-map').style.display = 'block';
     }
     clusters = L.markerClusterGroup();
-    clusters.on('click', markerOnClick);
+    clusters.on('dblclick', markerOnClick);
     clusters.addLayer(myCluster);
     map.addLayer(clusters);
   });
